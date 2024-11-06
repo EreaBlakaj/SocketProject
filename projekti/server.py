@@ -21,3 +21,12 @@ def log_request(client_ip, message):
     with open('server_logs.txt', 'a') as log_file:
         log_file.write(f"{timestamp} - IP: {client_ip} - Message: {message}\n")
 
+# Funksioni per dergimin e mesazheve tek te gjithe klientet
+def broadcast_message(sender_socket, message):
+    with client_lock:
+        for client in clients:
+            if client != sender_socket:
+                try:
+                    client.send(message.encode('utf-8'))
+                except Exception as e:
+                    print(f"[Error] Cannot send message to a client: {e}")
