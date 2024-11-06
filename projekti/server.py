@@ -5,10 +5,10 @@ from datetime import datetime
 import subprocess
 
 # Variables for IP and port
-IP = '0.0.0.0'
+IP = '' #Server IP
 PORT = 12345
 MAX_CONNECTIONS = 5
-FULL_ACCESS_CLIENTS = ['127.0.0.1']
+FULL_ACCESS_CLIENTS = [''] #Admin IP
 INACTIVITY_TIMEOUT = 120  # 2 minutes inactivity
 RESPONSE_TIMEOUT = 12  # 12 seconds response time
 
