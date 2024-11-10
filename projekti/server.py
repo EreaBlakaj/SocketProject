@@ -63,10 +63,35 @@ def handle_full_access(client_socket, client_address):
                 except socket.timeout:
                     client_socket.send(b"Ju u larguat per shkak te mungeses se aktivitetit.\n")
                     break
-            #if command == "shutdown":
+            if command == "shutdown":
+                log_request(client_ip, "Serveri po mbyllet nga klienti.")
+                print(f"[Shutdown] Serveri po mbyllet nga {client_ip}.")
+                client_socket.send(b"Serveri po mbyllet me skriptin shutdown.py...\n")
+                subprocess.run(["python3", "shutdown.py"])
+                client_socket.close()
+                for client in clients:
+                    client.close()
+                break
             #elif command.startswith("kick"):
             #elif command.startswith("broadcast"):
-            #elif command.startswith("open"):
+            elif command.startswith("open"):
+                file_name = command.split(" ", 1)[1]
+                try:
+                    with open(file_name, "r") as file:
+                        content = file.read()
+                        client_socket.send(f"Permbajtja e skedarit {file_name}:\n{content}".encode('utf-8'))
+                except FileNotFoundError:
+                    client_socket.send(f"Skedari {file_name} nuk u gjet.\n".encode('utf-8'))
+                except Exception as e:
+                    client_socket.send(f"Gabim gjate hapjes se skedarit: {e}\n".encode('utf-8'))
+
+            else:
+                try:
+                    exec(command)
+                    client_socket.send(b"Komanda u ekzekutua.\n")
+                except Exception as e:
+                    client_socket.send(f"Error gjate ekzekutimit: {e}\n".encode('utf-8'))
+
     except Exception as e:
         print(f"[Error] Problem me klientin me qasje te plote: {e}")
     finally:
