@@ -46,7 +46,7 @@ def client(server_ip, server_port):
 
 if __name__ == "__main__":
    
-    server_ip = 'server_ip' 
+    server_ip = '' 
     server_port = 12345  
 
 
