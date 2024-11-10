@@ -1,6 +1,23 @@
 import socket
 import threading
 
+# Funksioni për të lexuar mesazhet nga serveri
+def receive_messages(client_socket):
+    while True:
+        try:
+          
+            message = client_socket.recv(1024).decode('utf-8')
+            if message:
+               
+                print(f"[Serveri] {message}")
+            else:
+              
+                print("[Serveri] Lidhja u mbyll nga serveri.")
+                break
+        except Exception as e:
+           
+            print(f"[Error] Lidhja u ndërpre: {e}")
+            break
 
 # Funksioni kryesor i klientit që lidhet me serverin
 def client(server_ip, server_port):
