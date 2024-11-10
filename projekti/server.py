@@ -96,3 +96,68 @@ def handle_full_access(client_socket, client_address):
         print(f"[Error] Problem me klientin me qasje te plote: {e}")
     finally:
         client_socket.close()
+        # Funksioni per klientet me vetem qasje leximi (me vonese dhe monitorim te inaktivitetit)
+def handle_read_only(client_socket, client_address):
+    client_ip = client_address[0]
+    print(f"[Read Only] {client_ip} ka vetem qasje per lexim.")
+    log_request(client_ip, "Klienti ka vetem qasje per lexim.")
+    last_activity = time.time()
+
+    try:
+        while True:
+            time.sleep(2)  # Vonesa per klientet me vetem qasje leximi
+            client_socket.settimeout(INACTIVITY_TIMEOUT)
+
+            try:
+                message = client_socket.recv(1024).decode('utf-8')
+                last_activity = time.time()  # Rifresko kohen e fundit te aktivitetit
+            except socket.timeout:
+                # Klienti ka qene joaktiv per 2 minuta
+                client_socket.send(b"Ju jeni joaktiv! A jeni ende aty? (12 sekonda per pergjigje): ")
+                client_socket.settimeout(RESPONSE_TIMEOUT)
+
+                try:
+                    response = client_socket.recv(1024).decode('utf-8')
+                    if response.lower() in ['po', 'yes', 'y']:
+                        client_socket.send(b"Faleminderit per pergjigjen!\n")
+                        last_activity = time.time()
+                        client_socket.settimeout(None)
+                        continue
+                    else:
+                        client_socket.send(b"Lidhja juaj do te mbyllet.\n")
+                        break
+                except socket.timeout:
+                    client_socket.send(b"Ju u larguat per shkak te mungeses se aktivitetit.\n")
+                    break
+
+            client_socket.send(b"Keni vetem qasje per lexim.\n")
+
+    except Exception as e:
+        print(f"[Error] Problem me klientin me qasje vetem per lexim: {e}")
+    finally:
+        client_socket.close()
+
+# Funksioni per te krijuar serverin dhe pranuar lidhje te reja
+def start_server():
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind((IP, PORT))
+    server_socket.listen(MAX_CONNECTIONS)
+    print(f"[Startuar] Serveri eshte duke degjuar ne {IP}:{PORT}")
+
+    while True:
+        try:
+            client_socket, client_address = server_socket.accept()
+            with client_lock:
+                clients.append(client_socket)
+
+            if client_address[0] in FULL_ACCESS_CLIENTS:
+                client_thread = threading.Thread(target=handle_full_access, args=(client_socket, client_address))
+            else:
+                client_thread = threading.Thread(target=handle_read_only, args=(client_socket, client_address))
+
+            client_thread.start()
+        except Exception as e:
+            print(f"[Error] Problem me serverin: {e}")
+
+if __name__ == "__main__":
+    start_server()
