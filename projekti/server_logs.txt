@@ -1,9 +1,9 @@
-2024-11-01 02:06:14 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:06:14 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje tï¿½ plotï¿½.
 2024-11-01 02:06:37 - IP: 127.0.0.1 - Mesazhi: Serveri po mbyllet nga klienti.
-2024-11-01 02:08:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
-2024-11-01 02:09:32 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetëm qasje për lexim.
-2024-11-01 02:12:55 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
-2024-11-01 02:13:02 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:08:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje tï¿½ plotï¿½.
+2024-11-01 02:09:32 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetï¿½m qasje pï¿½r lexim.
+2024-11-01 02:12:55 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje tï¿½ plotï¿½.
+2024-11-01 02:13:02 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje tï¿½ plotï¿½.
 2024-11-01 02:13:08 - IP: 127.0.0.1 - Mesazhi: Serveri po mbyllet nga klienti.
 2024-11-01 02:44:21 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetem qasje per lexim.
 2024-11-01 02:46:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
@@ -17,3 +17,13 @@
 2024-11-01 03:01:02 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
 2024-11-01 03:01:12 - IP: 127.0.0.1 - Mesazhi: Largoi klientin 192.168.0.24.
 2024-11-06 23:29:45 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-10 22:50:47 - IP: 127.0.0.1 - Message: Client has full access.
+2024-11-10 22:50:54 - IP: 127.0.0.1 - Message: Server is being shut down by the client.
+2024-11-10 22:51:17 - IP: 127.0.0.1 - Message: Client has full access.
+2024-11-10 22:51:25 - IP: 127.0.0.1 - Message: Server is being shut down by the client.
+2024-11-10 23:07:21 - IP: 127.0.0.1 - Message: Klienti ka qasje te plote.
+2024-11-10 23:08:10 - IP: 127.0.0.1 - Message: Largoi klientin 127.0.0.1.
+2024-11-10 23:08:45 - IP: 127.0.0.1 - Message: Klienti ka qasje te plote.
+2024-11-10 23:08:57 - IP: 127.0.0.1 - Message: Largoi klientin 127.0.0.1.
+2024-11-10 23:09:46 - IP: 127.0.0.1 - Message: Klienti ka qasje te plote.
+2024-11-10 23:09:57 - IP: 127.0.0.1 - Message: Serveri po mbyllet nga klienti.

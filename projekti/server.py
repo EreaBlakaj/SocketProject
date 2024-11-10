@@ -158,6 +158,7 @@ def handle_read_only(client_socket, client_address):
 # Funksioni per te krijuar serverin dhe pranuar lidhje te reja
 def start_server():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+   
     server_socket.bind((IP, PORT))
     server_socket.listen(MAX_CONNECTIONS)
     print(f"[Startuar] Serveri eshte duke degjuar ne {IP}:{PORT}")
