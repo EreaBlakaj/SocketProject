@@ -1,0 +1,19 @@
+2024-11-01 02:06:14 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:06:37 - IP: 127.0.0.1 - Mesazhi: Serveri po mbyllet nga klienti.
+2024-11-01 02:08:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:09:32 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetëm qasje për lexim.
+2024-11-01 02:12:55 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:13:02 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje të plotë.
+2024-11-01 02:13:08 - IP: 127.0.0.1 - Mesazhi: Serveri po mbyllet nga klienti.
+2024-11-01 02:44:21 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetem qasje per lexim.
+2024-11-01 02:46:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-01 02:50:34 - IP: 127.0.0.1 - Mesazhi: Klienti ka vetem qasje per lexim.
+2024-11-01 02:51:00 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-01 02:51:12 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-01 02:58:06 - IP: 192.168.0.24 - Mesazhi: Klienti ka vetem qasje per lexim.
+2024-11-01 02:58:42 - IP: 192.168.0.24 - Mesazhi: Klienti ka vetem qasje per lexim.
+2024-11-01 02:58:53 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-01 03:00:58 - IP: 192.168.0.24 - Mesazhi: Klienti ka vetem qasje per lexim.
+2024-11-01 03:01:02 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.
+2024-11-01 03:01:12 - IP: 127.0.0.1 - Mesazhi: Largoi klientin 192.168.0.24.
+2024-11-06 23:29:45 - IP: 127.0.0.1 - Mesazhi: Klienti ka qasje te plote.

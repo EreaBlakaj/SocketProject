@@ -74,7 +74,7 @@ def handle_full_access(client_socket, client_address):
                 break
             #elif command.startswith("kick"):
             #elif command.startswith("broadcast"):
-              elif command.startswith("kick"):
+            elif command.startswith("kick"):
                 target_ip = command.split(" ")[1]
                 with client_lock:
                     for client in clients:
@@ -92,12 +92,6 @@ def handle_full_access(client_socket, client_address):
                 broadcast_message(client_socket, f"[Broadcast nga {client_ip}]: {message}")
                 client_socket.send(b"Mesazhi u broadcastua tek te gjithe klientet.\n")
 
-            else:
-                try:
-                    exec(command)
-                    client_socket.send(b"Komanda u ekzekutua.\n")
-                except Exception as e:
-                    client_socket.send(f"Error gjate ekzekutimit: {e}\n".encode('utf-8'))
             elif command.startswith("open"):
                 file_name = command.split(" ", 1)[1]
                 try:
